@@ -1,0 +1,46 @@
+graph TD
+    A[Cliente Web/Mobile] --> B[Frontend React PWA]
+    B --> C[API REST Flask]
+    C --> D[Banco de Dados SQLite/PostgreSQL]
+    C --> E[Sistema de Autenticação JWT]
+    C --> F[WebSocket Flask-SocketIO]
+    
+    G[Painel Restaurante] --> B
+    H[Painel Admin] --> B
+    
+    C --> I[Gateway de Pagamento]
+    C --> J[Serviço de Mapas]
+    C --> K[Serviço de Notificações]
+    C --> L[Upload de Imagens]
+    
+    M[Service Worker] --> B
+    N[Web App Manifest] --> B
+    
+    subgraph "Funcionalidades Principais"
+        O[Gestão de Usuários]
+        P[Gestão de Restaurantes]
+        Q[Gestão de Pedidos]
+        R[Sistema de Pagamentos]
+        S[Avaliações e Reviews]
+        T[Notificações em Tempo Real]
+    end
+    
+    C --> O
+    C --> P
+    C --> Q
+    C --> R
+    C --> S
+    C --> T
+    
+    subgraph "Tipos de Usuário"
+        U[Clientes]
+        V[Restaurantes]
+        W[Administradores]
+        X[Entregadores]
+    end
+    
+    A --> U
+    G --> V
+    H --> W
+    A --> X
+
